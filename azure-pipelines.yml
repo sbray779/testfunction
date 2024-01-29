@@ -41,12 +41,14 @@ variables:
   azureSubscription: Management
   appName: sbrayfunction
   # Agent VM image name
-  vmImageName: 'ubuntu-latest'
+
+Pool:
+  name: Default
 
 - task: AzureFunctionApp@1 # Add this at the end of your file
   inputs:
-    azureSubscription: <Azure service connection>
-    appType: functionAppLinux # default is functionApp
+    azureSubscription: FunctionService
+    appType: functionApp # default is functionApp
     appName: $(appName)
     package: $(System.ArtifactsDirectory)/**/*.zip
     #Uncomment the next lines to deploy to a deployment slot
