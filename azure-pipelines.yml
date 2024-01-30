@@ -53,7 +53,7 @@ steps:
     appType: functionApp # default is functionApp
     appName: $(appName)
     package: $(System.ArtifactsDirectory)/**/*.zip
-    deploymentMethod:  'auto'
+    deploymentMethod:  'zipDeploy'
     #Uncomment the next lines to deploy to a deployment slot
     #Note that deployment slots is not supported for Linux Dynamic SKU
     #deployToSlotOrASE: true
