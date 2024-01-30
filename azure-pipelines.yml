@@ -14,7 +14,7 @@ variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  azureSubscription: d498b026-c710-4f2c-8973-b79460419ffe
+  azureSubscription: FunctionService
   appName: sbrayfunction
 
 steps:
