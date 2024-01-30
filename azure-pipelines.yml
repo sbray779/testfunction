@@ -47,9 +47,9 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: AzureFunctionApp@1 # Add this at the end of your file
+- task: AzureFunctionApp@2 # Add this at the end of your file
   inputs:
-    azureSubscription: FunctionService
+    azureSubscription: $(azureSubscription)
     appType: functionApp # default is functionApp
     appName: $(appName)
     package: $(System.ArtifactsDirectory)/**/*.zip
