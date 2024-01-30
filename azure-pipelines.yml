@@ -24,6 +24,17 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
+- task: VisualStudioTestPlatformInstaller@1
+  inputs:
+  # Package settings
+    packageFeedSelector: 'nugetOrg' # 'nugetOrg' | 'customFeed' | 'netShare'. Required. Package Feed. Default: nugetOrg.
+    #versionSelector: 'latestPreRelease' # 'latestPreRelease' | 'latestStable' | 'specificVersion'. Required when packageFeedSelector = nugetOrg || packageFeedSelector = customFeed. Version. Default: latestPreRelease.
+    #testPlatformVersion: # string. Required when versionSelector = specificVersion. Test Platform Version. 
+    #customFeed: # string. Required when packageFeedSelector = customFeed. Package Source. 
+    #username: # string. Optional. Use when packageFeedSelector = customFeed. User Name. 
+    #password: # string. Optional. Use when packageFeedSelector = customFeed. Password. 
+    #netShare: # string. Required when packageFeedSelector = netShare. UNC Path.
+
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
