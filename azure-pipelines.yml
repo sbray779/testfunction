@@ -7,12 +7,14 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'
+  name: Default
 
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
+  azureSubscription: Management
+  appName: sbrayfunction
 
 steps:
 - task: NuGetToolInstaller@1
@@ -32,18 +34,6 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-
-trigger:
-- main
-
-variables:
-  # Azure service connection established during pipeline creation
-  azureSubscription: Management
-  appName: sbrayfunction
-  # Agent VM image name
-
-Pool:
-  name: Default
 
 - task: AzureFunctionApp@1 # Add this at the end of your file
   inputs:
